@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolling Dice App</title>
+<style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1{
+            color: white;
+        }
+
+        p{
+            color: white;
+            font-size: 20px;
+        }
+
+        #dice{
+            width: 180px;
+            height: 180px;
+            margin: 30px auto;
+            font-size: 120px;
+            line-height: 180px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 15px gray;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+    </head>
+
+<body onload="startRolling()">
+
+    <h1>🎲 Rolling Dice App 🎲</h1>
+
+    <p>Click on the dice to Start/Stop Rolling</p>
+
+    <div id="dice" onclick="stopstart()">⚀</div>
+
+<script>
+
+var diceFaces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+    var rolling = true;
+    var interval;
+function startRolling(){
+        interval = setInterval(change,100);
+    }
+    function change(){
+        var randomNumber = Math.floor(Math.random()*6);
+        document.getElementById("dice").innerHTML =
+        diceFaces[randomNumber];
+    }
+    function stopstart(){
+
+        if(rolling){
+
+            clearInterval(interval);
+            rolling = false;
+
+        }
+        else{
+
+            interval = setInterval(change,100);
+            rolling = true;
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
+
