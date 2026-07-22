@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date, Month & Year</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1{
+            color: darkblue;
+        }
+
+        #date{
+            font-size: 28px;
+            font-weight: bold;
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Current Date, Month & Year</h1>
+
+    <div id="date"></div>
+
+    <script>
+        let today = new Date();
+
+        let day = today.getDate();
+        let month = today.getMonth() + 1; // Months start from 0
+        let year = today.getFullYear();
+
+        document.getElementById("date").innerHTML =
+            "Date : " + day + "<br>" +
+            "Month : " + month + "<br>" +
+            "Year : " + year;
+    </script>
+
+</body>
+</html>

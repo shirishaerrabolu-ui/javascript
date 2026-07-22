@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number App</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #00f2fe;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        h1{
+            color:white;
+        }
+
+        #number{
+            font-size:60px;
+            font-weight:bold;
+            color:yellow;
+            background:black;
+            display:inline-block;
+            padding:20px 50px;
+            border-radius:15px;
+            margin:30px;
+        }
+
+        button{
+            padding:15px 35px;
+            font-size:20px;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            background:darkblue;
+            color:white;
+        }
+
+        button:hover{
+            background:navy;
+        }
+
+        #status{
+            margin-top:20px;
+            font-size:22px;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎲 Random Number Generator</h1>
+
+<div id="number">0</div>
+
+<br>
+
+<button onclick="toggleRandom()">
+    Start / Stop
+</button>
+
+<p id="status">Generator Running...</p>
+
+<script>
+
+let clickCount = 0;
+let interval;
+
+function generateRandom(){
+    document.getElementById("number").innerHTML =
+    Math.floor(Math.random()*100)+1;
+}
+
+// Start automatically
+interval = setInterval(generateRandom,1000);
+
+function toggleRandom(){
+
+    clickCount++;
+
+    if(clickCount % 2 == 1){
+        // Odd click -> Stop
+        clearInterval(interval);
+        document.getElementById("status").innerHTML =
+        "Stopped (Odd Click " + clickCount + ")";
+    }
+    else{
+        // Even click -> Start
+        interval = setInterval(generateRandom,1000);
+        document.getElementById("status").innerHTML =
+        "Running (Even Click " + clickCount + ")";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

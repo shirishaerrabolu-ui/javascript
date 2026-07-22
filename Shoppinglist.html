@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List App</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#3498DB;
+            text-align:center;
+            margin:0;
+            padding:30px;
+        }
+
+        h1{
+            color:#FFD700;
+        }
+
+        .container{
+            background-color:white;
+            width:420px;
+            margin:auto;
+            padding:20px;
+            border-radius:12px;
+            border:3px solid #2C3E50;
+        }
+
+        input{
+            width:220px;
+            padding:10px;
+            font-size:16px;
+            border:2px solid #3498DB;
+            border-radius:6px;
+        }
+
+        button{
+            padding:10px 15px;
+            font-size:16px;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            margin:5px;
+            color:white;
+        }
+
+        .add{
+            background-color:#27AE60;
+        }
+
+        .clear{
+            background-color:#E67E22;
+        }
+
+        .delete{
+            background-color:#E74C3C;
+            margin-left:10px;
+        }
+
+        ul{
+            list-style:none;
+            padding:0;
+            margin-top:20px;
+        }
+
+        li{
+            background-color:#ECF0F1;
+            margin:8px;
+            padding:12px;
+            border-radius:6px;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🛒 Shopping List</h1>
+
+<div class="container">
+
+<input type="text" id="item" placeholder="Enter item">
+
+<button class="add" onclick="addItem()">Add</button>
+
+<button class="clear" onclick="clearList()">Clear All</button>
+
+<ul id="list"></ul>
+
+</div>
+
+<script>
+
+function addItem(){
+
+    let item=document.getElementById("item").value;
+
+    if(item==""){
+        alert("Please enter an item.");
+        return;
+    }
+
+    let li=document.createElement("li");
+
+    li.innerHTML=item+
+    ' <button class="delete" onclick="removeItem(this)">Delete</button>';
+
+    document.getElementById("list").appendChild(li);
+
+    document.getElementById("item").value="";
+}
+
+function removeItem(button){
+    button.parentElement.remove();
+}
+
+function clearList(){
+    document.getElementById("list").innerHTML="";
+}
+
+</script>
+
+</body>
+</html>
+
