@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <center>
+            <h2>Demon Slayer Slider</h2>
+            <section>
+                <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ1Yw8mOxIRDAtnQYl66i_FNRzLEp0l-nsgB04gfB2qg&s=10" alt="Zenitsu Agatsuma" height="500px">
+                <img class="mySlides" src="https://static0.srcdn.com/wordpress/wp-content/uploads/2021/08/demon-slayer-anime-rengoku.jpg" alt="Rengoku Kyojuro" height="500px">
+                <img class="mySlides" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/02/giyu-tomioka.jpg" alt="Tomioka Giyu" height="500px">
+                <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_NG30J23W1Wr77uIkXAWVBdFs9BgpNKyF5hKgPy-DqQ&s=10" alt="Tengen Uzui" height="500px">
+            </section>
+           <
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+        </center>
+    </body>
+</html>
