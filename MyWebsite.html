@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinese Cuisine</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body,html{
+    height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#b6f8ef;
+    color:#333;
+    line-height:1.7;
+}
+
+.topnav{
+    background:#222;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.topnav a{
+    color:#1affa3;
+    text-decoration:none;
+    padding:12px 18px;
+    display:inline-block;
+    font-size:18px;
+}
+
+.topnav a:hover{
+    background:#111;
+    border-radius:5px;
+}
+
+.pimg1,.pimg2,.pimg3{
+    position:relative;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    opacity:.85;
+}
+
+.pimg1{
+    background-image:url("https://assets.epicurious.com/photos/624d9590857fa7e509238b59/1:1/w_4634,h_4634,c_limit/RegionalChinese_HERO_033122_31320.jpg");
+    min-height:100vh;
+}
+
+.pimg2{
+    background-image:url("https://cdn.britannica.com/55/269555-050-6708F4E1/mala-hot-pot-chongqing-china.jpg");
+    min-height:450px;
+}
+
+.pimg3{
+    background-image:url("https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1600&q=80");
+    min-height:450px;
+}
+
+.ptext{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.ptext span{
+    background:black;
+    color:white;
+    padding:20px 35px;
+    font-size:40px;
+    letter-spacing:5px;
+}
+
+.section{
+    padding:60px;
+    text-align:center;
+}
+
+.section-light{
+    background:#ffffff;
+}
+
+.section-dark{
+    background:#ffe9c6;
+}
+
+h1,h2,h3{
+    color:#d32f2f;
+    margin-bottom:20px;
+}
+
+ul{
+    width:70%;
+    margin:auto;
+    text-align:left;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.pimg1,.pimg2,.pimg3{
+background-attachment:scroll;
+}
+
+.ptext span{
+font-size:25px;
+padding:15px;
+}
+
+.section{
+padding:30px;
+}
+
+ul{
+width:95%;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topnav">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="pimg1">
+<div class="ptext">
+<span>CHINESE CUISINE</span>
+</div>
+</div>
+
+<section class="section section-light">
+
+<h1>Welcome to Chinese Cuisine</h1>
+
+<p>
+Chinese cuisine is one of the world's oldest and most diverse culinary traditions.
+Each region has its own cooking style, ingredients, and flavors.
+</p>
+
+<br>
+
+<h2>Major Regional Cuisines</h2>
+
+<ul>
+<li>Cantonese – Famous for Dim Sum and Roast Duck.</li>
+<li>Sichuan – Known for spicy dishes and Sichuan pepper.</li>
+<li>Hunan – Hot and smoky flavors.</li>
+<li>Jiangsu – Delicate seafood dishes.</li>
+<li>Zhejiang – Fresh seasonal ingredients.</li>
+<li>Fujian – Rich soups and seafood.</li>
+<li>Anhui – Wild herbs and mountain cuisine.</li>
+<li>Shandong – Wheat foods and seafood.</li>
+</ul>
+
+</section>
+
+<div class="pimg2">
+<div class="ptext">
+<span>POPULAR DISHES</span>
+</div>
+</div>
+
+<section class="section section-dark">
+
+<h2>Popular Chinese Dishes</h2>
+
+<ul>
+<li>🍗 Kung Pao Chicken</li>
+<li>🥟 Xiaolongbao</li>
+<li>🍜 Chow Mein</li>
+<li>🍚 Fried Rice</li>
+<li>🥘 Hot Pot</li>
+<li>🦆 Peking Duck</li>
+<li>🌶️ Mapo Tofu</li>
+<li>🍖 Sweet and Sour Pork</li>
+</ul>
+
+<br>
+
+<h2>Common Ingredients</h2>
+
+<ul>
+<li>Rice</li>
+<li>Noodles</li>
+<li>Soy Sauce</li>
+<li>Ginger</li>
+<li>Garlic</li>
+<li>Sesame Oil</li>
+<li>Tofu</li>
+<li>Bok Choy</li>
+<li>Mushrooms</li>
+<li>Chili Peppers</li>
+</ul>
+
+</section>
+
+<div class="pimg3">
+<div class="ptext">
+<span>DELICIOUS & TRADITIONAL</span>
+</div>
+</div>
+
+<footer>
+<h3>© 2026 Olluri Shaurya</h3>
+<p>All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+
