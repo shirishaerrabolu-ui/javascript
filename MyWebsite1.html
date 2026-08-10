@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Website</title>
+
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: #666;
+            background-color: #b6f8ef;
+        }
+
+        /* Navigation Bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #1affa3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #111;
+        }
+
+        /* Parallax Images */
+        .pimg1, .pimg2, .pimg3 {
+            position: relative;
+            opacity: 0.70;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .pimg1 {
+            background-image: url("https://ubifi.net/wp-content/uploads/2025/06/Kinds-of-Internet-Connection-1.webp");
+            min-height: 100vh;
+        }
+
+        .pimg2 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK3KIXQ38HSFsmFESx7cUrsdH1FJK0abHiODhwIfVxDBIciCDjzeYKzVFM&s=10");
+            min-height: 400px;
+        }
+
+        .pimg3 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAVKRsWm3kZOpxkm5z2ap8eH-fdvzjNmAd_y-Keo1cdhfPJGgqxSK4ccU&s=10");
+            min-height: 400px;
+        }
+
+        /* Sections */
+        .section {
+            text-align: center;
+            padding: 50px 80px;
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        .section-dark {
+            background-color: #282e34;
+            color: #ddd;
+        }
+
+        /* Text on Images */
+        .ptext {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .ptext .border {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .ptext .border.trans {
+            background-color: transparent;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 16px;
+        }
+
+        /* Mobile */
+        @media(max-width: 568px) {
+            .pimg1, .pimg2, .pimg3 {
+                background-attachment: scroll;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- First Image -->
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="border trans">
+                Welcome All To This Website
+            </span>
+        </div>
+    </div>
+
+    <!-- Section One -->
+    <section class="section section-dark">
+        <h2>Section One</h2>
+
+        <p>
+            Web development is the work involved in developing
+            a website for the Internet (World Wide Web) or an
+            intranet (a private network).
+        </p>
+    </section>
+
+    <!-- Second Image -->
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+                Image Two Text
+            </span>
+        </div>
+    </div>
+
+    <!-- Section Two -->
+    <section class="section section-light">
+        <h2>Web Development</h2>
+
+        <p>
+            HTML creates the structure of a website,
+            CSS adds style, and JavaScript adds
+            interactivity.
+        </p>
+    </section>
+
+    <!-- Third Image -->
+    <div class="pimg3">
+        <div class="ptext">
+            <span class="border trans">
+                Image Three
+            </span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span>© All Rights Reserved by Olluri Shaurya</span>
+    </div>
+
+</body>
+
+</html>
+
+
