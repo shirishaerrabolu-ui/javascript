@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Web Development Website</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #e8f5e9;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #222;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #1affa3;
+            text-align: center;
+            padding: 14px 18px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .topnav a:hover {
+            background-color: #111;
+            color: white;
+        }
+
+        /* ================= PAGES ================= */
+
+        .page {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        /* ================= HERO ================= */
+
+        .pimg1,
+        .pimg2,
+        .pimg3 {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pimg1 {
+            background-image: url("https://ubifi.net/wp-content/uploads/2025/06/Kinds-of-Internet-Connection-1.webp");
+            min-height: 550px;
+        }
+
+        .pimg2 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK3KIXQ38HSFsmFESx7cUrsdH1FJK0abHiODhwIfVxDBIciCDjzeYKzVFM&s=10");
+        }
+
+        .pimg3 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAVKRsWm3kZOpxkm5z2ap8eH-fdvzjNmAd_y-Keo1cdhfPJGgqxSK4ccU&s=10");
+        }
+
+        .ptext {
+            text-align: center;
+            width: 100%;
+        }
+
+        .ptext .border {
+            background-color: #111;
+            color: white;
+            padding: 20px 35px;
+            font-size: 40px;
+            letter-spacing: 6px;
+            display: inline-block;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #444;
+        }
+
+        .section-dark {
+            background-color: #282e34;
+            color: #ddd;
+        }
+
+        .section h1 {
+            color: #00897b;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #00897b;
+            margin-bottom: 20px;
+        }
+
+        .section-dark h1,
+        .section-dark h2 {
+            color: #1affa3;
+        }
+
+        .content {
+            max-width: 950px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .content h3 {
+            color: #00897b;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            margin-left: 30px;
+        }
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            width: 250px;
+            min-height: 220px;
+            padding: 25px;
+            background-color: white;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #777;
+        }
+
+        .card h3 {
+            color: #00897b;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+        }
+
+        .card button {
+            margin-top: 15px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00897b;
+            color: white;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #00695c;
+        }
+
+        /* ================= CODE BOX ================= */
+
+        .code-box {
+            background-color: #111;
+            color: #1affa3;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer h2 {
+            color: #1affa3;
+            margin-bottom: 10px;
+        }
+
+        /* ================= BUTTON ================= */
+
+        .home-button {
+            padding: 12px 25px;
+            background-color: #00897b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #00695c;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 600px) {
+
+            .topnav a {
+                display: block;
+            }
+
+            .ptext .border {
+                font-size: 25px;
+                letter-spacing: 3px;
+                padding: 15px;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<div class="topnav">
+
+    <a onclick="showPage('home')">Home</a>
+
+    <a onclick="showPage('about')">About</a>
+
+    <a onclick="showPage('html')">HTML</a>
+
+    <a onclick="showPage('css')">CSS</a>
+
+    <a onclick="showPage('javascript')">JavaScript</a>
+
+    <a onclick="showPage('internet')">Internet</a>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= HOME PAGE ====================== -->
+<!-- ================================================= -->
+
+<div id="home" class="page active-page">
+
+    <div class="pimg1">
+
+        <div class="ptext">
+
+            <span class="border">
+                WEB DEVELOPMENT
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-light">
+
+        <h1>Welcome to Web Development</h1>
+
+        <div class="content">
+
+            <p>
+                Web development is the process of creating and
+                maintaining websites and web applications.
+                It involves programming, designing and managing
+                websites that run on the Internet.
+            </p>
+
+            <p>
+                Web development is an exciting field because we can
+                use code to create websites, games, applications,
+                online stores, educational websites and many other
+                useful projects.
+            </p>
+
+            <p>
+                The three most important technologies for beginners
+                are HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div class="pimg2"></div>
+
+
+    <section class="section section-dark">
+
+        <h2>Explore Web Development</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>HTML</h3>
+
+                <p>
+                    HTML creates the structure of a webpage.
+                </p>
+
+                <button onclick="showPage('html')">
+                    Learn HTML
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>CSS</h3>
+
+                <p>
+                    CSS makes websites attractive and controls
+                    their layout and appearance.
+                </p>
+
+                <button onclick="showPage('css')">
+                    Learn CSS
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    JavaScript adds interaction and functionality
+                    to websites.
+                </p>
+
+                <button onclick="showPage('javascript')">
+                    Learn JavaScript
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Internet</h3>
+
+                <p>
+                    Learn how computers and websites communicate
+                    around the world.
+                </p>
+
+                <button onclick="showPage('internet')">
+                    Learn Internet
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= ABOUT PAGE ===================== -->
+<!-- ================================================= -->
+
+<div id="about" class="page">
+
+    <div class="pimg3">
+
+        <div class="ptext">
+
+            <span class="border">
+                ABOUT WEB DEVELOPMENT
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-light">
+
+        <h1>About Web Development</h1>
+
+        <div class="content">
+
+            <p>
+                Web development is the work involved in creating
+                websites and web applications for the Internet.
+            </p>
+
+            <h3>Frontend Development</h3>
+
+            <p>
+                Frontend development is the part of a website
+                that users see and interact with.
+            </p>
+
+            <p>
+                HTML, CSS and JavaScript are the main technologies
+                used in frontend development.
+            </p>
+
+            <h3>Backend Development</h3>
+
+            <p>
+                Backend development works behind the scenes.
+                It can manage servers, databases, accounts,
+                authentication and application logic.
+            </p>
+
+            <h3>Full-Stack Development</h3>
+
+            <p>
+                Full-stack development combines frontend and
+                backend development.
+            </p>
+
+            <h3>Why Learn Web Development?</h3>
+
+            <ul>
+
+                <li>Create your own websites</li>
+
+                <li>Build games</li>
+
+                <li>Create web applications</li>
+
+                <li>Learn programming</li>
+
+                <li>Build online portfolios</li>
+
+                <li>Develop useful projects</li>
+
+            </ul>
+
+        </div>
+
+        <button class="home-button"
+                onclick="showPage('home')">
+
+            Back to Home
+
+        </button>
+
+    </section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= HTML PAGE ====================== -->
+<!-- ================================================= -->
+
+<div id="html" class="page">
+
+    <div class="pimg2">
+
+        <div class="ptext">
+
+            <span class="border">
+                HTML
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-light">
+
+        <h1>HTML</h1>
+
+        <div class="content">
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to create the structure of webpages.
+            </p>
+
+            <h3>HTML is Used For</h3>
+
+            <ul>
+
+                <li>Headings</li>
+
+                <li>Paragraphs</li>
+
+                <li>Images</li>
+
+                <li>Links</li>
+
+                <li>Buttons</li>
+
+                <li>Tables</li>
+
+                <li>Forms</li>
+
+                <li>Videos</li>
+
+                <li>Lists</li>
+
+            </ul>
+
+
+            <h3>Simple HTML Example</h3>
+
+            <div class="code-box">
+
+                &lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+
+                &lt;p&gt;Welcome to my website.&lt;/p&gt;<br>
+
+                &lt;button&gt;Click Me&lt;/button&gt;
+
+            </div>
+
+
+            <h3>HTML Elements</h3>
+
+            <p>
+                HTML uses elements such as
+                &lt;html&gt;, &lt;head&gt;, &lt;body&gt;,
+                &lt;h1&gt;, &lt;p&gt;, &lt;img&gt; and
+                &lt;a&gt; to create webpages.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= CSS PAGE ======================= -->
+<!-- ================================================= -->
+
+<div id="css" class="page">
+
+    <div class="pimg3">
+
+        <div class="ptext">
+
+            <span class="border">
+                CSS
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-light">
+
+        <h1>CSS</h1>
+
+        <div class="content">
+
+            <p>
+                CSS stands for Cascading Style Sheets.
+                CSS is used to style HTML webpages.
+            </p>
+
+            <h3>CSS Can Change</h3>
+
+            <ul>
+
+                <li>Colors</li>
+
+                <li>Fonts</li>
+
+                <li>Backgrounds</li>
+
+                <li>Spacing</li>
+
+                <li>Margins</li>
+
+                <li>Padding</li>
+
+                <li>Borders</li>
+
+                <li>Layouts</li>
+
+                <li>Animations</li>
+
+            </ul>
+
+
+            <h3>Simple CSS Example</h3>
+
+            <div class="code-box">
+
+                body {<br>
+                &nbsp;&nbsp;background-color: lightblue;<br>
+                &nbsp;&nbsp;color: black;<br>
+                }<br><br>
+
+                h1 {<br>
+                &nbsp;&nbsp;color: green;<br>
+                }
+
+            </div>
+
+
+            <h3>Why is CSS Important?</h3>
+
+            <p>
+                HTML provides the structure of a website, while
+                CSS controls how that structure looks.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================ JAVASCRIPT PAGE ================= -->
+<!-- ================================================= -->
+
+<div id="javascript" class="page">
+
+    <div class="pimg2">
+
+        <div class="ptext">
+
+            <span class="border">
+                JAVASCRIPT
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-light">
+
+        <h1>JavaScript</h1>
+
+        <div class="content">
+
+            <p>
+                JavaScript is a programming language that makes
+                websites interactive and dynamic.
+            </p>
+
+            <h3>JavaScript Can</h3>
+
+            <ul>
+
+                <li>Create games</li>
+
+                <li>Create calculators</li>
+
+                <li>Create image sliders</li>
+
+                <li>Change webpage content</li>
+
+                <li>Change CSS styles</li>
+
+                <li>Validate forms</li>
+
+                <li>Create animations</li>
+
+                <li>Respond to button clicks</li>
+
+                <li>Create interactive applications</li>
+
+            </ul>
+
+
+            <h3>Simple JavaScript Example</h3>
+
+            <div class="code-box">
+
+                function hello() {<br>
+                &nbsp;&nbsp;alert("Hello World!");<br>
+                }
+
+            </div>
+
+
+            <h3>JavaScript Projects</h3>
+
+            <p>
+                JavaScript can be used to create calculators,
+                stopwatches, dice games, quizzes, random number
+                generators, image sliders and many other projects.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= INTERNET PAGE ================== -->
+<!-- ================================================= -->
+
+<div id="internet" class="page">
+
+    <div class="pimg1">
+
+        <div class="ptext">
+
+            <span class="border">
+                THE INTERNET
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <section class="section section-dark">
+
+        <h1>What is the Internet?</h1>
+
+        <div class="content">
+
+            <p>
+                The Internet is a worldwide network that connects
+                millions of computers, smartphones, servers and
+                other devices.
+            </p>
+
+            <h3>How Does the Internet Work?</h3>
+
+            <p>
+                When you enter a website address into a browser,
+                your device sends a request through the Internet.
+                A web server receives the request and sends the
+                required webpage files back to your browser.
+            </p>
+
+            <h3>Internet Services</h3>
+
+            <ul>
+
+                <li>Websites</li>
+
+                <li>Email</li>
+
+                <li>Online gaming</li>
+
+                <li>Video streaming</li>
+
+                <li>Cloud storage</li>
+
+                <li>Online education</li>
+
+                <li>Social media</li>
+
+                <li>Online shopping</li>
+
+                <li>Video calls</li>
+
+            </ul>
+
+
+            <h3>Web Browsers</h3>
+
+            <p>
+                A web browser is software that allows users to
+                access and view websites.
+            </p>
+
+            <p>
+                Examples include Google Chrome, Microsoft Edge,
+                Mozilla Firefox and Safari.
+            </p>
+
+
+            <h3>Web Servers</h3>
+
+            <p>
+                A web server stores website files and sends them
+                to users when their browsers request them.
+            </p>
+
+
+            <h3>Internet Safety</h3>
+
+            <p>
+                Always use strong passwords, avoid suspicious links,
+                keep your software updated and never share sensitive
+                information with unknown people online.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>WEB DEVELOPMENT
+    </h2>
+
+    <p>
+        Learn • Create • Code • Explore
+    </p>
+
+    <p>
+        All © copyrights reserved by Olluri Shaurya
+    </p>
+    
+    <h5>I copied the CSS from chatgpt
+    </h5>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showPage(pageName) {
+
+    // Get all pages
+    var pages = document.getElementsByClassName("page");
+
+    // Hide all pages
+    for (var i = 0; i < pages.length; i++) {
+
+        pages[i].classList.remove("active-page");
+
+    }
+
+    // Show selected page
+    document.getElementById(pageName)
+        .classList.add("active-page");
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+}
+
+</script>
+
+</body>
+</html>

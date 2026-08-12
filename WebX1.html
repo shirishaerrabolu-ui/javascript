@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Contact Us</title>
+
+    <style>
+
+        body, html {
+            margin: 0;
+            color: #666;
+            background-color: #b6f8ef;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            text-align: center;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #1affa3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #111;
+        }
+
+        /* Sections */
+
+        .section {
+            text-align: center;
+            padding: 50px 80px;
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        .section-dark {
+            background-color: #282e34;
+            color: #ddd;
+        }
+
+        /* Contact Form */
+
+        fieldset {
+            width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border: 3px solid #00897b;
+            border-radius: 10px;
+        }
+
+        legend {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00897b;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border: 2px solid #00897b;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #00897b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00695c;
+        }
+
+        /* Slideshow */
+
+        .mySlides {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: none;
+        }
+
+        /* Mobile */
+
+        @media(max-width: 600px) {
+
+            fieldset {
+                width: 80%;
+            }
+
+            .topnav a {
+                display: block;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <div class="topnav">
+
+        <a class="active" href="#home">Home</a>
+
+        <a href="#about">About_Us</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#offer">Offer</a>
+
+        <a href="#contact">Contact_Us</a>
+
+    </div>
+
+
+    <!-- Contact Section -->
+
+    <section class="section section-light" id="contact">
+
+        <h1>
+            <center>Contact Us</center>
+        </h1>
+
+        <h2>
+            dr.OlluriShaurya@gmail.com
+        </h2>
+
+
+        <!-- Contact Form -->
+
+        <form>
+
+            <fieldset>
+
+                <legend>Contact Us</legend>
+
+                <label>Name:</label>
+                <br>
+
+                <input type="text"
+                       name="name"
+                       placeholder="Enter your name"
+                       required>
+
+                <br>
+
+                <label>Enter your age:</label>
+                <br>
+
+                <input type="text"
+                       name="age"
+                       placeholder="Enter your age">
+
+                <br>
+
+                <label>Enter your email:</label>
+                <br>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <br>
+
+                <label>Message:</label>
+                <br>
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message here">
+                </textarea>
+
+                <br>
+
+                <input type="submit"
+                       value="Submit">
+
+            </fieldset>
+
+        </form>
+
+    </section>
+
+
+    <!-- Slideshow -->
+
+    <section id="gallery">
+
+        <img class="mySlides"
+             src="https://thumbs.dreamstime.com/b/close-up-html-css-coding-web-development-code-splitting-monitor-141664111.jpg"
+             alt="Code Of A Website">
+
+        <img class="mySlides"
+             src="https://static.vecteezy.com/system/resources/thumbnails/022/963/923/small/ai-generative-global-network-connection-over-planet-earth-3d-rendering-toned-image-photo.jpg"
+             alt="Internet/network illustration">
+
+        <img class="mySlides"
+             src="https://img.magnific.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?semt=ais_test_b&w=740&q=80"
+             alt="Web development or programming">
+
+    </section>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        var myIndex = 0;
+
+        carousel();
+
+        function carousel() {
+
+            var x =
+                document.getElementsByClassName("mySlides");
+
+            for (var i = 0; i < x.length; i++) {
+
+                x[i].style.display = "none";
+
+            }
+
+            myIndex++;
+
+            if (myIndex > x.length) {
+
+                myIndex = 1;
+
+            }
+
+            x[myIndex - 1].style.display = "block";
+
+            setTimeout(carousel, 3000);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

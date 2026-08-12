@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>WebVerse - Contact Us</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            color: #333;
+        }
+
+        /* NAVBAR */
+
+        .topnav {
+            background-color: #222;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #1affa3;
+            text-decoration: none;
+            padding: 12px 18px;
+        }
+
+        .topnav a:hover {
+            background-color: #111;
+            color: white;
+        }
+
+        /* CONTACT SECTION */
+
+        .contact {
+            min-height: 80vh;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact h1 {
+            color: #00897b;
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+
+        .contact p {
+            margin-bottom: 25px;
+        }
+
+        /* FORM */
+
+        .contact-form {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px #999;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #00897b;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 12px 25px;
+            background-color: #00897b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #00695c;
+        }
+
+        /* MESSAGE */
+
+        #message {
+            margin-top: 15px;
+            color: #00897b;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer h2 {
+            color: #1affa3;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:600px) {
+
+            .topnav a {
+                display: block;
+            }
+
+            .contact-form {
+                width: 95%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <div class="topnav">
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="html.html">HTML</a>
+
+        <a href="css.html">CSS</a>
+
+        <a href="javascript.html">JavaScript</a>
+
+        <a href="internet.html">Internet</a>
+
+        <a href="contact.html">Contact Us</a>
+
+    </div>
+
+
+    <!-- CONTACT US -->
+
+    <section class="contact">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question about WebVerse?
+            Send us a message!
+        </p>
+
+
+        <form class="contact-form" onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="userMessage"
+                rows="5"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>WebVerse</h2>
+
+        <p>
+            Explore the World of Web Development
+        </p>
+
+        <p>
+            © 2026 Olluri Shaurya
+        </p>
+        <h5>I copied the script tag from chatgpt
+    </h5>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            var name =
+                document.getElementById("name").value;
+
+            document.getElementById("message").innerHTML =
+                "Thank you, " + name +
+                "! Your message has been received.";
+
+            document.querySelector(".contact-form").reset();
+
+        }
+
+    </script>
+
+</body>
+</html>
